@@ -4,7 +4,7 @@ pipeline {
      stages {
         stage('Clone'){
             steps{
-              bat 'C:\\Users\\bekk-\\source\\lab2\\spring-petclin\\Clone.bat'
+              bat 'C:\\Users\\bekk-\\source\\lab2\\spring-petclinic\\Clone.bat'
                   }
         }
         stage('BuildANDTest') {
