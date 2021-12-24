@@ -4,18 +4,18 @@ pipeline {
      stages {
         stage('Clone'){
             steps{
-              bat 'C:\\Users\\bekk-\\source\lab2\\spring-petclin\\Clone.bat'
+              bat 'C:\\Users\\bekk-\\source\\lab2\\spring-petclin\\Clone.bat'
                   }
         }
         stage('BuildANDTest') {
             steps {
-                bat 'C:\\Users\\bekk-\\source\lab2\\spring-petclinic\\Build.bat'
+                bat 'C:\\Users\\bekk-\\source\\lab2\\spring-petclinic\\Build.bat'
             }
         }
 		
 		stage('Archive') {
 			steps {
-				zip zipFile: 'C:\\Users\\bekk-\\OneDrive\\Desktop\\Archive1\\' + env.BUILD_NUMBER.toString() + '.zip', dir: 'C:\\Users\\bekk-\\source\lab2\\spring-petclinic\\target'
+				zip zipFile: 'C:\\Users\\bekk-\\OneDrive\\Desktop\\Archive1\\' + env.BUILD_NUMBER.toString() + '.zip', dir: 'C:\\Users\\bekk-\\source\\lab2\\spring-petclinic\\target'
 			}
 		}
 		
