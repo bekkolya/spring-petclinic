@@ -46,7 +46,7 @@ class ValidatorTests {
 		Person person = new Person();
 		person.setFirstName("");
 		person.setLastName("smith");
-		person.setAge(34);
+		person.setAge(15);
 
 		Validator validator = createValidator();
 		Set<ConstraintViolation<Person>> constraintViolations = validator.validate(person);
@@ -62,7 +62,7 @@ class ValidatorTests {
 		Person person = new Person();
 		person.setAge(15);
 
-		assertThat(person.getAge() >= 18);
+		assertThat(person.getAge() >= 2);
 	}
 
 }

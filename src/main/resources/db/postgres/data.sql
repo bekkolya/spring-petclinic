@@ -1,9 +1,9 @@
-INSERT INTO vets VALUES (1, 'NBA', 'Bekk', 25);
-INSERT INTO vets VALUES (2, 'Helen', 'Leary', 25);
-INSERT INTO vets VALUES (3, 'Linda', 'Douglas', 25);
-INSERT INTO vets VALUES (4, 'Rafael', 'Ortega', 25);
-INSERT INTO vets VALUES (5, 'Henry', 'Stevens', 25);
-INSERT INTO vets VALUES (6, 'Sharon', 'Jenkins', 25);
+INSERT INTO vets VALUES (1, 'NBA', 'Bekk', 20);
+INSERT INTO vets VALUES (2, 'Helen', 'Leary', 20);
+INSERT INTO vets VALUES (3, 'Linda', 'Douglas', 20);
+INSERT INTO vets VALUES (4, 'Rafael', 'Ortega', 20);
+INSERT INTO vets VALUES (5, 'Henry', 'Stevens', 20);
+INSERT INTO vets VALUES (6, 'Sharon', 'Jenkins', 20);
 ALTER SEQUENCE vets_id_seq RESTART WITH 7;
 
 INSERT INTO specialties VALUES (1, 'radiology');
