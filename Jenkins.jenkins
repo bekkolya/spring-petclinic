@@ -4,7 +4,7 @@ pipeline {
      stages {
         stage('Clone'){
             steps{
-              bat 'C:\\Users\\bekk-\\source\lab2\\spring-petclinic\\Clone.bat'
+              bat 'C:\\Users\\bekk-\\source\lab2\\Clone.bat'
                   }
         }
         stage('BuildANDTest') {
@@ -36,7 +36,7 @@ pipeline {
         } 
         success { 
             emailext body: "SUCCESS\nJob: ${env.JOB_NAME}, build: ${env.BUILD_NUMBER}\nCheck console output at ${env.BUILD_URL}",
-            to: "bekk-olga-vladimirovna",
+            to: "bekk-olga-vladimirovna@mail.ru",
             recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
             subject: "SUCCESS JOB: ${env.JOB_NAME}"
             
