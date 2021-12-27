@@ -11,7 +11,7 @@ CREATE TABLE vets (
   id         INTEGER IDENTITY PRIMARY KEY,
   first_name VARCHAR(30),
   last_name  VARCHAR(30),
-  age int(4)
+  age int(3)
 );
 CREATE INDEX vets_last_name ON vets (last_name);
 
@@ -38,7 +38,7 @@ CREATE TABLE owners (
   id         INTEGER IDENTITY PRIMARY KEY,
   first_name VARCHAR(30),
   last_name  VARCHAR_IGNORECASE(30),
-  age INT(4),
+  age INT(3),
   address    VARCHAR(255),
   city       VARCHAR(80),
   telephone  VARCHAR(20)
