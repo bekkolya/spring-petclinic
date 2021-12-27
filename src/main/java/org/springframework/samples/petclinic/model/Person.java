@@ -37,7 +37,7 @@ public class Person extends BaseEntity {
 	private String lastName;
 
 	@Column(name = "age")
-	
+
 	private int age;
 
 	public int getAge() {
