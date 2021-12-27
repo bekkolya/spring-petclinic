@@ -1,33 +1,29 @@
 pipeline {
     agent any
- 	triggers { pollSCM('* * * * *') }
+ 	    triggers { pollSCM('* * * * *') }
      stages {
-        stage('Clone'){
-            steps{
-<<<<<<< HEAD
-              bat 'C:\\Users\\bekk-\\source\lab2\\Clone.bat'
-=======
-              bat 'C:\\Users\\bekk-\\source\\lab2\\Clone.bat'
->>>>>>> 8fe88db1028c73a73eb9bb41068e5c63ccc83a25
-                  }
-        }
-        stage('BuildANDTest') {
-            steps {
-                bat 'C:\\Users\\bekk-\\source\\lab2\\spring-petclinic\\Build.bat'
-            }
-        }
-		
+            stage('Clone'){
+                            steps{
+                                   bat 'C:\\Users\\bekk-\\source\\lab2\\Clone.bat'
+                                 }
+                          }
+            stage('BuildANDTest') {
+                                   steps {
+                                            bat 'C:\\Users\\bekk-\\source\\lab2\\spring-petclinic\\Build.bat'
+                                         }
+                                   }
+	 	
 		stage('Archive') {
 			steps {
 				zip zipFile: 'C:\\Users\\bekk-\\OneDrive\\Desktop\\Archive1\\' + env.BUILD_NUMBER.toString() + '.zip', dir: 'C:\\Users\\bekk-\\source\\lab2\\spring-petclinic\\target'
-			}
-		}
+			       }
+		                   }
 		
 		stage('Deploy') {
 			steps {
 				unzip zipFile: 'C:\\Users\\bekk-\\OneDrive\\Desktop\\Archive1\\' + env.BUILD_NUMBER.toString() + '.zip', dir: 'C:\\Users\\bekk-\\OneDrive\\Desktop\\Deploy1\\' + env.BUILD_NUMBER.toString()
-			}
-		}
+			        }
+		             }
     }
 	
 	post { 
@@ -37,13 +33,13 @@ pipeline {
             recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
             subject: "FAILED JOB: ${env.JOB_NAME}"
             
-        } 
+                    } 
         success { 
             emailext body: "SUCCESS\nJob: ${env.JOB_NAME}, build: ${env.BUILD_NUMBER}\nCheck console output at ${env.BUILD_URL}",
             to: "bekk-olga-vladimirovna@mail.ru",
             recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
             subject: "SUCCESS JOB: ${env.JOB_NAME}"
             
-        } 
+                    } 
     }
 }
